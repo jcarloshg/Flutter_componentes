@@ -32,6 +32,9 @@ class AlertPage extends StatelessWidget {
       barrierDismissible: true,
       builder: (contex) {
         return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
           title: const Text("Titulo del dialogo"),
           content: Column(
             mainAxisSize: MainAxisSize.min,
@@ -43,8 +46,14 @@ class AlertPage extends StatelessWidget {
             ],
           ),
           actions: <Widget>[
-            TextButton(onPressed: () {}, child: const Text("Cancelar")),
-            TextButton(onPressed: () {}, child: const Text("Ok")),
+            TextButton(
+              child: const Text("Cancelar"),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+            TextButton(
+              child: const Text("Ok"),
+              onPressed: () {},
+            ),
           ],
         );
       },
